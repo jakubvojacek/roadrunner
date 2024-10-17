@@ -176,7 +176,7 @@ class Session extends \Nette\Http\Session
 			return;
 		}
 
-		$this->onBeforeWrite($this);
+		Nette\Utils\Arrays::invoke($this->onBeforeWrite, $this);
 
 		$nf = &$_SESSION['__NF'];
 		foreach ($nf['META'] ?? [] as $name => $foo) {
@@ -400,7 +400,7 @@ class Session extends \Nette\Http\Session
 		}
 
 		$this->initialize();
-		$this->onStart($this);
+		Nette\Utils\Arrays::invoke($this->onStart, $this);
 	}
 
 	private function initialize(): void
