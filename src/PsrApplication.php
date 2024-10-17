@@ -150,8 +150,7 @@ class PsrApplication
 			$this->httpRequest->getMethod(),
 			$params,
 			$this->httpRequest->getPost(),
-			[],
-			[Request::SECURED => $this->httpRequest->isSecured()]
+			[]
 		);
 	}
 
